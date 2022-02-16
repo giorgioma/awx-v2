@@ -16,6 +16,8 @@ use AwxV2\Api\Credential;
 use AwxV2\Api\Config;
 use AwxV2\Api\Job;
 use AwxV2\Api\JobTemplate;
+use AwxV2\Api\WorkflowJob;
+use AwxV2\Api\WorkflowJobTemplate;
 use AwxV2\Api\Me;
 use AwxV2\Api\Organization;
 use AwxV2\Api\Ping;
@@ -73,15 +75,31 @@ class AwxV2
     }
     
     /**
-     * @return Job
+     * @return JobTemplate
      */
     public function jobTemplate()
     {
         return new JobTemplate($this->adapter, $this->url);
     }
+
+    /**
+     * @return WorkflowJob
+     */
+    public function workflowJob()
+    {
+        return new WorkflowJob($this->adapter, $this->url);
+    }
     
     /**
-     * @return me
+     * @return WorkflowJobTemplate
+     */
+    public function workflowJobTemplate()
+    {
+        return new WorkflowJobTemplate($this->adapter, $this->url);
+    }
+    
+    /**
+     * @return Me
      */
     public function me()
     {
@@ -89,7 +107,7 @@ class AwxV2
     }
     
     /**
-     * @return organizatio
+     * @return Organization
      */
     public function organization()
     {
@@ -97,7 +115,7 @@ class AwxV2
     }
     
     /**
-     * @return ping
+     * @return Ping
      */
     public function ping()
     {
@@ -105,7 +123,7 @@ class AwxV2
     }
     
     /**
-     * @return project
+     * @return Project
      */
     public function project()
     {
@@ -113,7 +131,7 @@ class AwxV2
     }
     
     /**
-     * @return setting
+     * @return Setting
      */
     public function setting()
     {
